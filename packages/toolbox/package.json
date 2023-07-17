@@ -2,7 +2,7 @@
   "name": "@klat/toolbox",
   "version": "1.0.0",
   "description": "",
-  "main": "",
+  "main": "src/index.ts",
   "scripts": {},
   "keywords": [],
   "author": "",
