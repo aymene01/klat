@@ -1,0 +1,8 @@
+node_modules
+.turbo
+target
+dist
+.env
+.eslintcache
+docker
+.git
