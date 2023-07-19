@@ -121,6 +121,7 @@ importers:
       '@heroicons/react': ^2.0.18
       '@types/react': ^18.2.15
       autoprefixer: ^10.4.14
+      class-variance-authority: ^0.7.0
       next: 13.4.10
       postcss: ^8.4.26
       react: ^18.2.0
@@ -132,6 +133,7 @@ importers:
       '@heroicons/react': 2.0.18_react@18.2.0
       '@types/react': 18.2.15
       autoprefixer: 10.4.14_postcss@8.4.26
+      class-variance-authority: 0.7.0
       next: 13.4.10_fe3dnxkyax5wguqewcrbc4wcza
       postcss: 8.4.26
       react: 18.2.0
@@ -4208,6 +4210,12 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
+  /class-variance-authority/0.7.0:
+    resolution: {integrity: sha512-jFI8IQw4hczaL4ALINxqLEXQbWcNjoSkloa4IaufXCJr6QawJyw7tuRysRsrE8w2p/4gGaxKIt/hX3qz/IbD1A==}
+    dependencies:
+      clsx: 2.0.0
+    dev: true
+
   /clean-stack/2.2.0:
     resolution: {integrity: sha512-4diC9HaTE+KRAMWhDhrGOECgWZxoevMc5TlkObMqNSsVU62PYzXZ/SMTjzyGAFF1YusgxGcSWTEXBhp0CPwQ1A==}
     engines: {node: '>=6'}
@@ -4261,6 +4269,11 @@ packages:
   /clone/1.0.4:
     resolution: {integrity: sha512-JQHZ2QMW6l3aH/j6xCqQThY/9OH4D/9ls34cgkUBiEeocRTU04tHfKPBsUK1PqZCUQM7GiA0IIXJSuXHI64Kbg==}
     engines: {node: '>=0.8'}
+    dev: true
+
+  /clsx/2.0.0:
+    resolution: {integrity: sha512-rQ1+kcj+ttHG0MKVGBUXwayCCF1oh39BF5COIpRzuCEv8Mwjv0XucrI2ExNTOn9IlLifGClWQcU9BrZORvtw6Q==}
+    engines: {node: '>=6'}
     dev: true
 
   /color-convert/1.9.3:
