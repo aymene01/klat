@@ -5,16 +5,24 @@
     "test": "turbo run test",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "codegen": "graphql-codegen --config config.yml"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "4.0.1",
     "@turbo/gen": "^1.9.7",
     "eslint": "^7.32.0",
     "prettier": "^2.5.1",
     "turbo": "latest",
     "typescript": "^5.1.6",
-    "vitest": "^0.33.0"
+    "vitest": "^0.33.0",
+    "@graphql-codegen/typescript": "4.0.1",
+    "@graphql-codegen/typescript-document-nodes": "4.0.1",
+    "@graphql-codegen/typescript-resolvers": "4.0.1"
   },
   "packageManager": "pnpm@7.15.0",
-  "name": "klat"
+  "name": "klat",
+  "dependencies": {
+    "graphql": "^16.7.1"
+  }
 }
