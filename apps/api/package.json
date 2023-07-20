@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "vitest --run",
-    "build": "esbuild src/bin/api.ts --bundle --platform=node --outfile=dist/bin/api.js",
+    "build": "tsup src/bin/api.ts",
     "lint": "eslint --cache",
     "tsc": "tsc --noEmit",
     "dev": "npx prisma generate && nodemon --delay 1000ms --exec 'node -r esbuild-register src/bin/api.ts' -e .ts"
