@@ -2,8 +2,8 @@ import { createServer } from '@/graphql/createServer'
 import { createBusiness } from '@/business/createBusiness'
 import { createIamService } from '@/iam/createIamService'
 import { connectDatabase } from '@/database'
-import * as Env from './env'
 import { Logger, logger, waitForSignal } from '@klat/toolbox'
+import * as Env from './env'
 import * as fs from 'fs'
 
 const api = async (logger: Logger) => {

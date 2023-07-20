@@ -9,16 +9,13 @@ import { promisify } from 'util'
 import { Options } from './types'
 import { resolvers } from './resolvers'
 import { createContext, Context } from './context'
-import { partial } from 'lodash'
 
 export const createServer = async (opts: Options) => {
-  const context = partial(createContext, opts)
-
   const app = express()
   const httpServer = http.createServer(app)
 
   const server = new ApolloServer<Context>({
-    typeDefs: await opts.typeDefs,
+    typeDefs: opts.typeDefs,
     resolvers,
     plugins: [ApolloServerPluginDrainHttpServer({ httpServer })],
   })
@@ -30,7 +27,7 @@ export const createServer = async (opts: Options) => {
     cors<cors.CorsRequest>(),
     json(),
     expressMiddleware(server, {
-      context: async req => context(req),
+      context: async req => createContext(opts, req),
     }),
   )
 

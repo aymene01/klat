@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "main": "src/index.ts",
-  "scripts": {},
+  "scripts": {
+    "tsc": "tsc --noEmit",
+    "lint": "eslint --cache"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC"
