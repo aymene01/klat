@@ -20,7 +20,7 @@ export default {
   framework: {
     name: '@storybook/nextjs',
     options: {
-      nextConfigPath: path.resolve(__dirname, '../../dashboard/next.config.js'),
+      nextConfigPath: path.resolve(__dirname, '../../../app/web/next.config.js'),
     },
   },
   docs: {
