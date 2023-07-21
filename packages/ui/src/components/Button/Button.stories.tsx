@@ -1,12 +1,12 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react'
-import { Button } from '../'
+import { StoryFn, Meta } from '@storybook/react'
+import { Button } from '.'
 import { ChevronDownIcon } from '@heroicons/react/24/outline'
 
 export default {
   component: Button,
-} as ComponentMeta<typeof Button>
+} as Meta<typeof Button>
 
-const Template: ComponentStory<typeof Button> = args => <Button {...args}>A button</Button>
+const Template: StoryFn<typeof Button> = args => <Button {...args}>A button</Button>
 
 export const Primary = Template.bind({})
 Primary.args = {
