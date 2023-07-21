@@ -1,12 +1,6 @@
-import { Logger } from '@klat/toolbox'
 import { PrismaClient } from '@prisma/client'
+import { DatabaseOption } from './types'
 
-type DatabaseOption = {
-  logger: Logger
-  databaseUrl: string
-  connectionPoolSize: number
-  queryTimeout: number
-}
 declare const global: typeof globalThis & { prisma: PrismaClient }
 
 export function connectDatabase(opts: DatabaseOption) {
