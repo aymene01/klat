@@ -75,6 +75,7 @@ importers:
 
   apps/web:
     specifiers:
+      '@klat/hooks': '*'
       '@klat/ui': '*'
       '@types/node': 20.4.2
       '@types/react': ^18.2.15
@@ -87,6 +88,7 @@ importers:
       tailwindcss: ^3.3.3
       typescript: ^5.1.6
     dependencies:
+      '@klat/hooks': link:../../packages/hooks
       '@klat/ui': link:../../packages/ui
       '@types/node': 20.4.2
       '@types/react': 18.2.15
@@ -101,6 +103,15 @@ importers:
 
   packages/graphql:
     specifiers: {}
+
+  packages/hooks:
+    specifiers:
+      '@types/react': ^18.2.15
+      react: ^18.2.0
+    dependencies:
+      react: 18.2.0
+    devDependencies:
+      '@types/react': 18.2.15
 
   packages/toolbox:
     specifiers:
