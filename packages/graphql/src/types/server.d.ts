@@ -1,4 +1,5 @@
 import { GraphQLResolveInfo } from 'graphql';
+export type RequireFields<T, K extends keyof T> = Omit<T, K> & { [P in K]-?: NonNullable<T[P]> };
 
 
 export type ResolverTypeWrapper<T> = Promise<T> | T;
@@ -70,18 +71,32 @@ export type DirectiveResolverFn<TResult = {}, TParent = {}, TContext = {}, TArgs
 
 /** Mapping between all available schema types and the resolvers types */
 export type ResolversTypes = {
+  AuthenticatedUser: ResolverTypeWrapper<AuthenticatedUser>;
   Boolean: ResolverTypeWrapper<Scalars['Boolean']['output']>;
   Hello: ResolverTypeWrapper<Hello>;
+  Meta: ResolverTypeWrapper<Meta>;
+  Mutation: ResolverTypeWrapper<{}>;
   Query: ResolverTypeWrapper<{}>;
   String: ResolverTypeWrapper<Scalars['String']['output']>;
+  User: ResolverTypeWrapper<User>;
 };
 
 /** Mapping between all available schema types and the resolvers parents */
 export type ResolversParentTypes = {
+  AuthenticatedUser: AuthenticatedUser;
   Boolean: Scalars['Boolean']['output'];
   Hello: Hello;
+  Meta: Meta;
+  Mutation: {};
   Query: {};
   String: Scalars['String']['output'];
+  User: User;
+};
+
+export type AuthenticatedUserResolvers<ContextType = any, ParentType extends ResolversParentTypes['AuthenticatedUser'] = ResolversParentTypes['AuthenticatedUser']> = {
+  meta?: Resolver<ResolversTypes['Meta'], ParentType, ContextType>;
+  user?: Resolver<ResolversTypes['User'], ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
 export type HelloResolvers<ContextType = any, ParentType extends ResolversParentTypes['Hello'] = ResolversParentTypes['Hello']> = {
@@ -89,12 +104,33 @@ export type HelloResolvers<ContextType = any, ParentType extends ResolversParent
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
+export type MetaResolvers<ContextType = any, ParentType extends ResolversParentTypes['Meta'] = ResolversParentTypes['Meta']> = {
+  token?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
+export type MutationResolvers<ContextType = any, ParentType extends ResolversParentTypes['Mutation'] = ResolversParentTypes['Mutation']> = {
+  createAccount?: Resolver<ResolversTypes['AuthenticatedUser'], ParentType, ContextType, RequireFields<MutationCreateAccountArgs, 'password' | 'passwordConfirmation' | 'username'>>;
+  createSession?: Resolver<ResolversTypes['AuthenticatedUser'], ParentType, ContextType, RequireFields<MutationCreateSessionArgs, 'password' | 'username'>>;
+};
+
 export type QueryResolvers<ContextType = any, ParentType extends ResolversParentTypes['Query'] = ResolversParentTypes['Query']> = {
   sayHello?: Resolver<Maybe<ResolversTypes['Hello']>, ParentType, ContextType>;
 };
 
+export type UserResolvers<ContextType = any, ParentType extends ResolversParentTypes['User'] = ResolversParentTypes['User']> = {
+  password?: Resolver<Maybe<ResolversTypes['String']>, ParentType, ContextType>;
+  username?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  uuid?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
+  __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
+};
+
 export type Resolvers<ContextType = any> = {
+  AuthenticatedUser?: AuthenticatedUserResolvers<ContextType>;
   Hello?: HelloResolvers<ContextType>;
+  Meta?: MetaResolvers<ContextType>;
+  Mutation?: MutationResolvers<ContextType>;
   Query?: QueryResolvers<ContextType>;
+  User?: UserResolvers<ContextType>;
 };
 

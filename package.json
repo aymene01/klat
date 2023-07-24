@@ -7,7 +7,7 @@
     "lint": "turbo run lint",
     "tsc": "turbo run tsc",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "codegen": "graphql-codegen --config config.yml"
+    "codegen": "graphql-codegen --config codegen.yml"
   },
   "devDependencies": {
     "@changesets/cli": "^2.26.2",

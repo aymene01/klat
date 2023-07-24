@@ -2,6 +2,26 @@ type Hello {
   message: String
 }
 
+type User {
+  uuid: String!
+  username: String!
+  password: String
+}
+
+type Meta {
+  token: String!
+}
+
+type AuthenticatedUser {
+  user: User!
+  meta: Meta!
+}
+
+type Mutation {
+  createSession(username: String!, password: String!): AuthenticatedUser!
+  createAccount(username: String!, password: String!, passwordConfirmation: String!): AuthenticatedUser!
+}
+
 type Query {
   sayHello: Hello
 }
