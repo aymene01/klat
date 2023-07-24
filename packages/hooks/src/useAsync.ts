@@ -12,7 +12,7 @@ type State<T> = {
 /**
  * @description a hook for using async calls with ease
  **/
-const useAsync = <T>(initialState: State<T> = { status: 'idle', data: null, error: null }) => {
+export const useAsync = <T>(initialState: State<T> = { status: 'idle', data: null, error: null }) => {
   const initialStateRef = useRef<State<T>>(initialState)
 
   const [{ status, data, error }, unsafeSetState] = useReducer(
@@ -63,5 +63,3 @@ const useAsync = <T>(initialState: State<T> = { status: 'idle', data: null, erro
     reset,
   }
 }
-
-export default useAsync
