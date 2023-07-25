@@ -1,9 +1,8 @@
 import { Resolvers } from '@klat/graphql'
+import { sayHello } from './query/sayHello'
 
 export const resolvers: Resolvers = {
   Query: {
-    sayHello: () => ({
-      message: 'hey from the GraphQL server',
-    }),
+    sayHello,
   },
 }
