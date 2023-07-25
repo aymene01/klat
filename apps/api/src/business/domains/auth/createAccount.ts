@@ -20,10 +20,12 @@ export const createAccount = async (
     throw new GraphQLError('User Already Exist')
   }
 
+  const hash = await opts.iamService.hashPassword(req.password)
+
   const user = await opts.database.prisma.user.create({
     data: {
-      password: req.password,
       username: req.username,
+      password: hash,
     },
   })
 
