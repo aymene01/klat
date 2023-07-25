@@ -55,6 +55,7 @@ importers:
       jsonwebtoken: ^9.0.1
       lodash: ^4.17.21
       nodemon: ^3.0.1
+      zod: ^3.21.4
     dependencies:
       '@apollo/server': 4.7.5_graphql@16.7.1
       '@klat/graphql': link:../../packages/graphql
@@ -67,6 +68,7 @@ importers:
       graphql: 16.7.1
       jsonwebtoken: 9.0.1
       lodash: 4.17.21
+      zod: 3.21.4
     devDependencies:
       '@types/bcrypt': 5.0.0
       '@types/body-parser': 1.19.2

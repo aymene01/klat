@@ -4,7 +4,7 @@ import { Options } from './types'
 
 type Payload = {
   uuid: string
-  email: string
+  username: string
 }
 
 export const hashPassword = async (password: string) => {
