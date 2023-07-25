@@ -1,7 +1,6 @@
 import { Resolvers } from '@klat/graphql'
-import { sayHello } from './query/sayHello'
-import { createAccount } from './mutation/createAccount'
-import { createSession } from './mutation/createSession'
+import { sayHello } from './query'
+import { createAccount, createSession } from './mutation'
 
 export const resolvers: Resolvers = {
   Query: {
