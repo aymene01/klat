@@ -5,7 +5,7 @@ import { GraphQLError } from 'graphql'
 
 export const createSession = async (
   opts: Options,
-  ctx: Context,
+  _ctx: Context,
   req: MutationCreateSessionArgs,
 ): Promise<AuthenticatedUser> => {
   const user = await opts.database.prisma.user.findUnique({
