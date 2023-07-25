@@ -44,6 +44,7 @@ const api = async (logger: Logger) => {
   await database.start()
   await graphqlServer.start()
   await waitForSignal(['SIGINT', 'SIGTERM'])
+  logger.info('Shut down the server...👋')
   await graphqlServer.stop()
   await database.stop()
 }
