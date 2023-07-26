@@ -1,4 +1,4 @@
-import { fetcherQL } from '@klat/toolbox'
+import { fetcherQL } from '@/lib/http/request'
 import { useMutation, UseMutationOptions } from '@tanstack/react-query'
 
 export const useSwrMutation = <T, K, V extends string>({

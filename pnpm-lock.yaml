@@ -87,7 +87,6 @@ importers:
     specifiers:
       '@klat/graphql': '*'
       '@klat/hooks': '*'
-      '@klat/toolbox': '*'
       '@klat/ui': '*'
       '@tanstack/react-query': ^4.32.0
       '@types/lodash': ^4.14.195
@@ -107,7 +106,6 @@ importers:
     dependencies:
       '@klat/graphql': link:../../packages/graphql
       '@klat/hooks': link:../../packages/hooks
-      '@klat/toolbox': link:../../packages/toolbox
       '@klat/ui': link:../../packages/ui
       '@tanstack/react-query': 4.32.0_biqbaboplfbrettd7655fr4n2y
       '@types/node': 20.4.2

@@ -1,4 +1,4 @@
-import { fetcherQL } from '@klat/toolbox'
+import { fetcherQL } from '@/lib/http/request'
 import { useQuery, UseQueryOptions } from '@tanstack/react-query'
 
 export const useSwrQuery = <T, V extends string>({
