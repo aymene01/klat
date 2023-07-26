@@ -29,7 +29,8 @@
 			"@/lib/*": ["lib/*"],
 			"@/resolvers/*": ["graphql/resolvers/*"],
 			"@/toolbox/*": ["toolbox/*"],
-			"@/generated/*": ["graphql/generated/*"]
+			"@/generated/*": ["graphql/generated/*"],
+			"@/contant/*":["lib/helpers/constant"] 
 		}
 	},
 	"include": ["src/**/*.ts", "prisma/**/*.ts"],
