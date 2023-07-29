@@ -57,3 +57,8 @@ export const ERROR = {
       `The ${meta.target.join(',')} already exist${meta.target.length < 1 ? 's' : ''}`,
   },
 }
+
+export const ERR_INVALID_USERNAME = 'Invalid username'
+export const ERR_INVALID_PASSWORD = 'Invalid password'
+export const ERR_PASSWORD_MISMATCH = 'Password mismatch'
+export const ERR_USER_ALREADY_EXISTS = 'User Already Exists'
