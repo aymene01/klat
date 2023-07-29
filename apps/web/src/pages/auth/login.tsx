@@ -7,7 +7,7 @@ type LoginForm = {
 }
 
 const Login = () => {
-  const { register, formState, handleSubmit } = useForm<LoginForm>()
+  const { register, handleSubmit } = useForm<LoginForm>()
 
   const onSubmit = (data: LoginForm) => {
     console.log(data)
